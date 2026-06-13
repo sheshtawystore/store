@@ -1,112 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>POWER STORE</title>
+    <style>
+        /* تصفير الهوامش لملء الشاشة بالكامل */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-height: 100vh !important;
+            background-color: #050811 !important;
+            /* تركيب صورة الخلفية المحددة */
+            background-image: url('bk.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            background-repeat: no-repeat !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            overflow-x: hidden !important;
+            position: relative !important;
+        }
 
-<!-- ستايل الكروت الفخمة ممتدة لملء الشاشة بالكامل -->
-<style>
-    body {
-        background-color: #050811 !important; /* خلفية داكنة جداً تليق بالنيون */
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+        /* حاوية المطر المتحرك */
+        .rain-container {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none !important; /* عشان متغطيش على الضغط */
+            z-index: 1 !important;
+            overflow: hidden;
+        }
 
-    /* حاوية ممتدة لتملأ الشاشة بالكامل */
-    .store-container {
-        width: 100% !important;
-        max-width: 100% !important; /* إلغاء التحديد القديم لملء الشاشة بالكامل */
-        padding: 15px !important;
-        box-sizing: border-box !important;
-        direction: rtl !important; /* تظبيط الاتجاه العربي */
-    }
+        /* ستايل قطرة المطر النيون المضيئة */
+        .drop {
+            position: absolute;
+            background: linear-gradient(transparent, #00f2fe);
+            width: 1px; /* خط رفيع جداً */
+            height: 80px;
+            opacity: 0.3;
+            animation: fall linear infinite;
+        }
 
-    /* كرت القسم الفخم الشفاف بعرض كامل */
-    .gaming-card {
-        background: rgba(6, 11, 25, 0.75) !important;
-        border: 1px solid rgba(0, 242, 254, 0.25) !important;
-        border-radius: 16px !important;
-        padding: 20px 24px !important; /* زيادة الحشوة الداخلية للفخامة */
-        margin-bottom: 20px !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 15px rgba(0, 242, 254, 0.05) !important;
-        backdrop-filter: blur(4px) !important;
-        text-decoration: none !important;
-        transition: transform 0.2s, border-color 0.2s !important;
-        cursor: pointer !important;
-        width: 100% !important; /* الكرت يفرش بعرض الشاشة */
-        box-sizing: border-box !important;
-    }
+        @keyframes fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
 
-    .gaming-card:active {
-        transform: scale(0.98) !important;
-    }
+        /* الحاوية الأساسية للكروت - مالية الشاشة */
+        .store-container {
+            position: relative !important;
+            z-index: 2 !important; /* فوق المطر */
+            width: 100% !important;
+            max-width: 100% !important; /* ملء كامل عرض الشاشة */
+            padding: 15px !important;
+            box-sizing: border-box !important;
+            direction: rtl !important;
+        }
 
-    /* نصوص جهة اليمين داخل الكرت */
-    .card-info {
-        text-align: right !important;
-        flex-grow: 1 !important;
-        padding-right: 15px !important;
-    }
+        /* الكروت الشفافة الفخمة بعرض كامل */
+        .gaming-card {
+            background: rgba(6, 11, 25, 0.82) !important;
+            border: 1px solid rgba(0, 242, 254, 0.25) !important;
+            border-radius: 14px !important;
+            padding: 20px 15px !important;
+            margin-bottom: 15px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 242, 254, 0.08) !important;
+            backdrop-filter: blur(6px) !important;
+            -webkit-backdrop-filter: blur(6px) !important;
+            text-decoration: none !important;
+            transition: transform 0.1s !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
 
-    .card-title {
-        color: #ffffff !important;
-        font-size: 19px !important; /* تكبير حجم الخط */
-        font-weight: bold !important;
-        margin: 0 0 6px 0 !important;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
-    }
+        .gaming-card:active {
+            transform: scale(0.98) !important;
+        }
 
-    .card-subtitle {
-        color: #8fa0ba !important;
-        font-size: 14px !important; /* تكبير خط الشرح */
-        margin: 0 !important;
-    }
+        .card-info {
+            text-align: right !important;
+            flex-grow: 1 !important;
+            padding-right: 10px !important;
+        }
 
-    /* أزرار انضمام الدائرية المضيئة بـ النيون (جهة اليسار) */
-    .join-btn-cyan {
-        background: transparent !important;
-        color: #00f2fe !important;
-        border: 2px solid #00f2fe !important;
-        padding: 10px 22px !important; /* تكبير الزرار */
-        border-radius: 25px !important;
-        font-size: 15px !important;
-        font-weight: bold !important;
-        box-shadow: 0 0 12px rgba(0, 242, 254, 0.4) !important;
-        white-space: nowrap !important;
-    }
+        .card-title {
+            color: #ffffff !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            margin: 0 0 6px 0 !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7) !important;
+        }
 
-    .join-btn-blue {
-        background: transparent !important;
-        color: #1877F2 !important;
-        border: 2px solid #1877F2 !important;
-        padding: 10px 22px !important;
-        border-radius: 25px !important;
-        font-size: 15px !important;
-        font-weight: bold !important;
-        box-shadow: 0 0 12px rgba(24, 119, 242, 0.4) !important;
-        white-space: nowrap !important;
-    }
+        .card-subtitle {
+            color: #8fa0ba !important;
+            font-size: 13px !important;
+            margin: 0 !important;
+        }
 
-    .join-btn-green {
-        background: transparent !important;
-        color: #38ef7d !important;
-        border: 2px solid #38ef7d !important;
-        padding: 10px 22px !important;
-        border-radius: 25px !important;
-        font-size: 15px !important;
-        font-weight: bold !important;
-        box-shadow: 0 0 12px rgba(56, 239, 125, 0.4) !important;
-        white-space: nowrap !important;
-    }
-</style>
+        /* أزرار انضمام الدائرية النيون */
+        .join-btn-cyan {
+            background: transparent !important;
+            color: #00f2fe !important;
+            border: 2px solid #00f2fe !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            font-size: 15px !important;
+            font-weight: bold !important;
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.5) !important;
+            white-space: nowrap !important;
+        }
 
-<!-- عنصر صوت ضرب النار السريع -->
+        .join-btn-blue {
+            background: transparent !important;
+            color: #1877F2 !important;
+            border: 2px solid #1877F2 !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            font-size: 15px !important;
+            font-weight: bold !important;
+            box-shadow: 0 0 12px rgba(24, 119, 242, 0.5) !important;
+            white-space: nowrap !important;
+        }
+
+        .join-btn-green {
+            background: transparent !important;
+            color: #38ef7d !important;
+            border: 2px solid #38ef7d !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            font-size: 15px !important;
+            font-weight: bold !important;
+            box-shadow: 0 0 12px rgba(56, 239, 125, 0.5) !important;
+            white-space: nowrap !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- تأثير المطر الرقمي المتحرك خلف الكروت -->
+<div class="rain-container" id="rainContainer"></div>
+
+<!-- عنصر صوت ضرب النار -->
 <audio id="gunshot-sound" preload="auto">
     <source src="https://assets.mixkit.co/active_storage/sfx/2763/2763-84.wav" type="audio/wav">
 </audio>
 
 <div class="store-container">
     
-    <!-- عنوان المتجر الرئيسي -->
-    <p style="color: #00f2fe !important; font-size: 26px !important; font-weight: 900 !important; text-align: center !important; margin-top: 20px !important; margin-bottom: 30px !important; text-shadow: 0 0 15px rgba(0, 242, 254, 0.6) !important; letter-spacing: 1px !important;">
+    <!-- العنوان الرئيسي للمتجر بتأثير قوي -->
+    <p style="color: #00f2fe !important; font-size: 25px !important; font-weight: 900 !important; text-align: center !important; margin-top: 20px !important; margin-bottom: 25px !important; text-shadow: 0 0 15px rgba(0, 242, 254, 0.😎 !important; letter-spacing: 1px !important;">
         🔗 لينكات ششتاوي ستور الرسمية 🔗
     </p>
     
@@ -138,7 +188,7 @@
     </a>
     
     <!-- كرت: صفحة الفيسبوك -->
-    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" class="gaming-card" style="border-color: rgba(24, 119, 242, 0.3) !important;" onclick="playSound()">
+    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" class="gaming-card" style="border-color: rgba(24, 119, 242, 0.4) !important;" onclick="playSound()">
         <div class="card-info">
             <p class="card-title">🌐 صفحة الفيسبوك الرسمية</p>
             <p class="card-subtitle">تابع العروض، المسابقات واللايفات اليومية 🔥</p>
@@ -147,7 +197,7 @@
     </a>
     
     <!-- كرت: الفـــرع (1) -->
-    <a href="https://chat.whatsapp.com/Gr0zbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+    <a href="https://chat.whatsapp.com/Gr0zbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         <div class="card-info">
             <p class="card-title">👥 جروب ششتاوي الفـــرع (1)</p>
             <p class="card-subtitle">بيع وشراء الحسابات والمجموعات الرسمية 1️⃣</p>
@@ -156,7 +206,7 @@
     </a>
     
     <!-- كرت: الفـــرع (2) -->
-    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         <div class="card-info">
             <p class="card-title">👥 جروب ششتاوي الفـــرع (2)</p>
             <p class="card-subtitle">المجتمع الثاني لتبادل حسابات الجيمنج 2️⃣</p>
@@ -165,7 +215,7 @@
     </a>
 
     <!-- كرت: الفـــرع (3) -->
-    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         <div class="card-info">
             <p class="card-title">👥 جروب ششتاوي الفـــرع (3)</p>
             <p class="card-subtitle">جروب الشحن الفوري والمسابقات الكبرى 3️⃣</p>
@@ -174,11 +224,28 @@
     </a>
 </div>
 
-<!-- كود تشغيل صوت ضرب النار عند الضغط -->
 <script>
+    // تشغيل صوت ضرب النار عند الضغط
     function playSound() {
         var sound = document.getElementById("gunshot-sound");
         sound.currentTime = 0;
         sound.play();
     }
+
+    // توليد المطر الرقمي المضيء برمجياً لتوزيع عشوائي فخم
+    const container = document.getElementById('rainContainer');
+    const dropCount = 15; // عدد الخطوط المتحركة في نفس الوقت لعدم حدوث بطء
+
+    for (let i = 0; i < dropCount; i++) {
+        const drop = document.createElement('div');
+        drop.classList.add('drop');
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDuration = (Math.random() * 1.5 + 1) + 's'; // سرعات متفاوتة للخطوط
+        drop.style.animationDelay = Math.random() * 2 + 's';
+        container.appendChild(drop);
+    }
 </script>
+
+</body>
+</html>
+
