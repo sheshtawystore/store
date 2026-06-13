@@ -1,57 +1,88 @@
 
-<!-- ستايل الخلفية والأشكال الفخمة للجيمينج -->
+ستختفي الرسالة في غضون: 23h
+23h
 <style>
     body {
+        /* إرجاع الخلفية الأصلية للموقع */
         background-color: #0b0c10 !important;
-        background-image: 
-            radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
-            radial-gradient(circle at 80% 70%, rgba(56, 239, 125, 0.12) 0%, transparent 40%),
-            linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%) !important;
-        background-attachment: fixed !important;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        background-image: none !important; 
+    }
+    
+    /* تكبير وتظبيط أبعاد الصفحة عشان تبقى قريبة ومالية الشاشة */
+    .gaming-container {
+        width: 100% !important;
+        max-width: 500px !important; /* تكبير العرض */
+        margin: 10px auto !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    /* ستايل الأزرار الكبير والفخم */
+    .gaming-btn {
+        display: block !important;
+        text-align: center !important;
+        padding: 18px !important; /* زيادة الحجم عشان يبقى قريب */
+        margin-bottom: 18px !important;
+        border-radius: 12px !important;
+        font-size: 18px !important; /* تكبير الخط */
+        font-weight: bold !important;
+        text-decoration: none !important;
+        color: #ffffff !important;
+        transition: transform 0.1s ease !important;
+        cursor: pointer !important;
+        border: none !important;
+    }
+
+    /* تأثير الضغطة */
+    .gaming-btn:active {
+        transform: scale(0.95) !important;
     }
 </style>
 
-<div style="width: 100% !important; max-width: 420px !important; margin: 30px auto !important; padding: 20px !important; box-sizing: border-box !important; text-align: center !important; background: rgba(255, 255, 255, 0.03) !important; border-radius: 24px !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; backdrop-filter: blur(10px) !important; box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;">
+<audio id="gunshot-sound" preload="auto">
+    <source src="https://assets.mixkit.co/active_storage/sfx/2763/2763-84.wav" type="audio/wav">
+</audio>
+
+<div class="gaming-container">
     
-    <!-- عنوان القسم المضيء بجودة عالية -->
-    <p style="color: #ffffff !important; font-size: 20px !important; font-weight: 900 !important; text-align: center !important; margin-bottom: 25px !important; text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe !important; display: block !important; letter-spacing: 1px !important;">
+    <p style="color: #ffffff !important; font-size: 22px !important; font-weight: 900 !important; text-align: center !important; margin-bottom: 25px !important; text-shadow: 0 2px 4px rgba(0,0,0,0.😎 !important; display: block !important;">
         ⚡ أرقام تراستيد ششتاوي الوحيدة ⚡
     </p>
     
-    <!-- رقم ششتاوي 1 -->
-    <a href="https://wa.me/201288242061" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #00f2fe, #4facfe) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 15px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(0, 242, 254, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://wa.me/201288242061" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #00f2fe, #4facfe) !important; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4) !important;" onclick="playSound()">
         💬 رقم ششتاوي 1
     </a>
 
-    <!-- رقم ششتاوي 2 -->
-    <a href="https://wa.me/201285020887" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #00f2fe, #4facfe) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 15px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(0, 242, 254, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://wa.me/201285020887" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #00f2fe, #4facfe) !important; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4) !important;" onclick="playSound()">
         💬 رقم ششتاوي 2
     </a>
     
-    <!-- رقم ششتاوي 3 -->
-    <a href="https://wa.me/201281562074" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #00f2fe, #4facfe) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 25px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(0, 242, 254, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://wa.me/201281562074" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #00f2fe, #4facfe) !important; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4) !important;" onclick="playSound()">
         💬 رقم ششتاوي 3
     </a>
     
-    <!-- صفحة الفيسبوك -->
-    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #1877F2, #3b5998) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 25px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(24, 119, 242, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" class="gaming-btn" style="background: #1877F2 !important; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4) !important;" onclick="playSound()">
         🌐 صفحة الفيسبوك
     </a>
     
-    <!-- جروب ششتاوي الفـــرع (1) -->
-    <a href="https://chat.whatsapp.com/Gr0zbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #11998e, #38ef7d) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 15px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(56, 239, 125, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://chat.whatsapp.com/Gr0zbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #11998e, #38ef7d) !important; box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         👥 الفـــرع (1) 1️⃣
     </a>
     
-    <!-- جروب ششتاوي الفـــرع (2) -->
-    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #11998e, #38ef7d) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 15px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(56, 239, 125, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #11998e, #38ef7d) !important; box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         👥 الفـــرع (2) 2️⃣
     </a>
 
-    <!-- جروب ششتاوي الفـــرع (3) -->
-    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0" target="_blank" style="display: block !important; text-align: center !important; background: linear-gradient(45deg, #11998e, #38ef7d) !important; color: #ffffff !important; padding: 16px !important; margin-bottom: 15px !important; border-radius: 14px !important; font-weight: bold !important; text-decoration: none !important; box-shadow: 0 0 15px rgba(56, 239, 125, 0.4) !important; border: 1px solid rgba(255,255,255,0.2) !important; transition: 0.3s !important;">
+    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-btn" style="background: linear-gradient(45deg, #11998e, #38ef7d) !important; box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4) !important;" onclick="playSound()">
         👥 الفـــرع (3) 3️⃣
     </a>
-    
 </div>
+
+<script>
+    function playSound() {
+        var sound = document.getElementById("gunshot-sound");
+        sound.currentTime = 0; // إعادة الصوت من الأول لو اتداس ورا بعضه
+        sound.play();
+    }
+</script>
