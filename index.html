@@ -1,141 +1,169 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHESHTAWY STORE | التواصل والروابط</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('bk.jpg') no-repeat center center fixed;
-background-size: cover;
-            color: #ffffff;
-            text-align: center;
-            padding: 50px 20px;
-            margin: 0;
-        }
-        .container {
-            max-width: 550px;
-            margin: 0 auto;
-        
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-            border: 1px solid #45f3ff;
-        }
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #45f3ff;
-            margin-bottom: 15px;
-            box-shadow: 0 0 15px rgba(69, 243, 255, 0.5);
-        }
-        h1 {
-            color: #45f3ff;
-            margin-bottom: 5px;
-            font-size: 32px;
-            letter-spacing: 1px;
-        }
-        p {
-            color: #c5c6c7;
-            font-size: 18px;
-            margin-bottom: 35px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            background: #45f3ff;
-            color: #0b0c10;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(69, 243, 255, 0.2);
-        }
-        .btn:hover {
-            background: #1f2833;
-            color: #45f3ff;
-            border: 1px solid #45f3ff;
-            transform: scale(1.03);
-        }
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-        }
-        .btn-whatsapp:hover {
-            background: #1f2833;
-            color: #25D366;
-            border: 1px solid #25D366;
-        }
-        .btn-group {
-            background: #ff007f;
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
-        }
-        .btn-group:hover {
-            background: #1f2833;
-            color: #ff007f;
-            border: 1px solid #ff007f;
-        }
-    </style>
-</head>
-<body>
+<style>
+    body {
+        background-color: #050811 !important; /* خلفية داكنة جداً تليق بالنيون */
+    }
 
-    <div class="container">
-        <!-- لوجو البراند -->
-        <img src="logo.png" alt="Logo" class="logo">
+    /* الحاوية الأساسية قريبة ومالية الشاشة */
+    .store-container {
+        width: 100% !important;
+        max-width: 460px !important; /* حجم ممتاز يملى شاشة الموبايل والكمبيوتر */
+        margin: 20px auto !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
+        direction: rtl !important; /* تظبيط الاتجاه العربي */
+    }
 
-        <!-- اسم البراند -->
-        <h1>SHESHTAWY STORE</h1>
-        <p> مكانك لشحن جميع العابك</p>
-        
-        <hr style="border: 0; border-top: 1px solid #45f3ff; opacity: 0.3; margin: 30px 0;">
+    /* كرت القسم الفخم الشفاف */
+    .gaming-card {
+        background: rgba(6, 11, 25, 0.75) !important;
+        border: 1px solid rgba(0, 242, 254, 0.25) !important;
+        border-radius: 16px !important;
+        padding: 16px 20px !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 15px rgba(0, 242, 254, 0.05) !important;
+        backdrop-filter: blur(4px) !important;
+        text-decoration: none !important;
+        transition: transform 0.2s, border-color 0.2s !important;
+        cursor: pointer !important;
+    }
 
-   
-</div>
-        
-. تغيير
-<!-- قسم أرقام التواصل -->
-<div style="width: 100%; text-align: center; margin-top: 20px; margin-bottom: 15px;">
-    <p style="color: #ffffff; font-size: 18px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.6); margin: 0; padding: 0;">أرقام تراستيد ششتاوي الوحيدة:</p>
+    .gaming-card:active {
+        transform: scale(0.97) !important;
+    }
+
+    /* نصوص جهة اليمين داخل الكرت */
+    .card-info {
+        text-align: right !important;
+        flex-grow: 1 !important;
+        padding-right: 10px !important;
+    }
+
+    .card-title {
+        color: #ffffff !important;
+        font-size: 17px !important;
+        font-weight: bold !important;
+        margin: 0 0 6px 0 !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
+    }
+
+    .card-subtitle {
+        color: #8fa0ba !important;
+        font-size: 13px !important;
+        margin: 0 !important;
+    }
+
+    /* أزرار انضمام الدائرية المضيئة بـ النيون (جهة اليسار) */
+    .join-btn-cyan {
+        background: transparent !important;
+        color: #00f2fe !important;
+        border: 2px solid #00f2fe !important;
+        padding: 8px 16px !important;
+        border-radius: 20px !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        box-shadow: 0 0 12px rgba(0, 242, 254, 0.4) !important;
+        white-space: nowrap !important;
+    }
+
+    .join-btn-blue {
+        background: transparent !important;
+        color: #1877F2 !important;
+        border: 2px solid #1877F2 !important;
+        padding: 8px 16px !important;
+        border-radius: 20px !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        box-shadow: 0 0 12px rgba(24, 119, 242, 0.4) !important;
+        white-space: nowrap !important;
+    }
+
+    .join-btn-green {
+        background: transparent !important;
+        color: #38ef7d !important;
+        border: 2px solid #38ef7d !important;
+        padding: 8px 16px !important;
+        border-radius: 20px !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        box-shadow: 0 0 12px rgba(56, 239, 125, 0.4) !important;
+        white-space: nowrap !important;
+    }
+</style>
+
+<audio id="gunshot-sound" preload="auto">
+    <source src="https://assets.mixkit.co/active_storage/sfx/2763/2763-84.wav" type="audio/wav">
+</audio>
+
+<div class="store-container">
+    
+    <p style="color: #00f2fe !important; font-size: 24px !important; font-weight: 900 !important; text-align: center !important; margin-bottom: 25px !important; text-shadow: 0 0 15px rgba(0, 242, 254, 0.6) !important; letter-spacing: 1px !important;">
+        🔗 لينكات ششتاوي ستور الرسمية 🔗
+    </p>
+    
+    <a href="https://wa.me/201288242061" target="_blank" class="gaming-card" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">💬 رقم ششتاوي المعتمد (1)</p>
+            <p class="card-subtitle">للتواصل المباشر والاستفسارات السريعة ⚡</p>
+        </div>
+        <div class="join-btn-cyan">تواصل 💬</div>
+    </a>
+
+    <a href="https://wa.me/201285020887" target="_blank" class="gaming-card" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">💬 رقم ششتاوي المعتمد (2)</p>
+            <p class="card-subtitle">متاح لتلقي الطلبات وشحن الحسابات 🎮</p>
+        </div>
+        <div class="join-btn-cyan">تواصل 💬</div>
+    </a>
+    
+    <a href="https://wa.me/201281562074" target="_blank" class="gaming-card" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">💬 رقم ششتاوي المعتمد (3)</p>
+            <p class="card-subtitle">الدعم الفني والخدمات الفورية 🛠️</p>
+        </div>
+        <div class="join-btn-cyan">تواصل 💬</div>
+    </a>
+    
+    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" class="gaming-card" style="border-color: rgba(24, 119, 242, 0.3) !important;" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">🌐 صفحة الفيسبوك الرسمية</p>
+            <p class="card-subtitle">تابع العروض، المسابقات واللايفات اليومية 🔥</p>
+        </div>
+        <div class="join-btn-blue">تابعنا 🌐</div>
+    </a>
+    
+    <a href="https://chat.whatsapp.com/Gr0zbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">👥 جروب ششتاوي الفـــرع (1)</p>
+            <p class="card-subtitle">بيع وشراء الحسابات والمجموعات الرسمية 1️⃣</p>
+        </div>
+        <div class="join-btn-green">انضم +👥</div>
+    </a>
+    
+    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">👥 جروب ششتاوي الفـــرع (2)</p>
+            <p class="card-subtitle">المجتمع الثاني لتبادل حسابات الجيمنج 2️⃣</p>
+        </div>
+        <div class="join-btn-green">انضم +👥</div>
+    </a>
+
+    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0" target="_blank" class="gaming-card" style="border-color: rgba(56, 239, 125, 0.3) !important;" onclick="playSound()">
+        <div class="card-info">
+            <p class="card-title">👥 جروب ششتاوي الفـــرع (3)</p>
+            <p class="card-subtitle">جروب الشحن الفوري والمسابقات الكبرى 3️⃣</p>
+        </div>
+        <div class="join-btn-green">انضم +👥</div>
+    </a>
 </div>
 
-<!-- رقم ششتاوي 1 -->
-<div style="margin-bottom: 15px; width: 100%;">
-    <a href="https://wa.me/201288242061" target="_blank" class="btn" style="display: block; text-align: center;">💬 رقم ششتاوي 1</a>
-</div>
-<!-- رقم ششتاوي 2 -->
-<div style="margin-bottom: 25px; width: 100%;">
-    <a href="https://wa.me/201285020887" target="_blank" class="btn" style="display: block; text-align: center;">💬 رقم ششتاوي 2</a>
-</div>
-<!-- رقم ششتاوي 2 -->
-<div style="margin-bottom: 25px; width: 100%;">
-    <a href="https://wa.me/201281562074" target="_blank" class="btn" style="display: block; text-align: center;">💬 رقم ششتاوي 3</a>
-</div>
-
-<!-- الروابط الرسمية المعتمدة -->
-<div style="margin-bottom: 15px; width: 100%;">
-    <a href="https://www.facebook.com/share/1DeQJGhm9e/?mibextid=wwXIfr" target="_blank" class="btn" style="display: block; text-align: center; background: #1877F2;">🌐 صفحة الفيسبوك</a>
-</div>
-
-<!-- أزرار الجروبات الجديدة -->
-<div style="margin-bottom: 15px; width: 100%;">
-    <a href="https://chat.whatsapp.com/Gr0ZbVZtJ8NBz7UsbAcCg5?s=cl&p=i&mlu=2&amv=0" target="_blank" class="btn btn-group" style="display: block; text-align: center;">👥 جروب ششتاوي (1)</a>
-</div>
- 
-<div style="margin-bottom: 25px; width: 100%;">
-    <a href="https://chat.whatsapp.com/E2bgFFY6UXvKyXQfOR2B57?s=cl&p=i&mlu=2&amv=0
-" target="_blank" class="btn btn-group" style="display: block; text-align: center;">👥 جروب ششتاوي (2)</a>
-</div>
-<style="margin-bottom: 25px; width: 100%;">
-    <a href="https://chat.whatsapp.com/LH6m1MnSmEIL4AmIuIjUBg?s=cl&p=i&mlu=2&amv=0
-" target="_blank" class="btn btn-group" style="display: block; text-align: center;">👥 جروب ششتاوي (3)</a>
-</body>
-</html>
+<script>
+    function playSound() {
+        var sound = document.getElementById("gunshot-sound");
+        sound.currentTime = 0;
+        sound.play();
+    }
+</script>
